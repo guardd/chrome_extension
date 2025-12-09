@@ -1,6 +1,6 @@
 // background.js - Background service worker
 
-console.log('ChatGPT Traffic Parser - Background script loaded');
+console.log('ChatGPT Traffic Parser - Background script loaded!');
 
 // Listen for installation
 chrome.runtime.onInstalled.addListener(() => {
