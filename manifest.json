@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Orcho - Risk Intelligence",
+  "version": "1.0.0",
+  "description": "AI risk detection and compliance monitoring for ChatGPT and Claude",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://*.chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://*.claude.ai/*",
+    "http://localhost:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://claude.ai/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "orcho_logo.png",
+    "48": "orcho_logo.png",
+    "128": "orcho_logo.png"
+  }
+}
